@@ -7,7 +7,6 @@ Page({
 
   onLoad(options) {
     this.getCurrentTime();
-    console.log(options)
     this.setData({
       name: options.name,
       stuid: options.stuid,
@@ -18,17 +17,17 @@ Page({
       this.setData({
         show: true
       })
-    }, 3000)
+    }, 2000)
   },
 
   getCurrentTime() {
     let date = new Date()
     let YY = date.getFullYear()
-    let MM = parseInt(date.getMonth()) < 10 ? '0' + date.getMonth() : date.getMonth()
-    let DD = parseInt(date.getDay()) < 10 ? '0' + date.getDay() : date.getDay()
-    let hh = parseInt(date.getHours()) < 10 ? '0' + date.getHours() : date.getHours()
-    let mm = parseInt(date.getMinutes()) < 10 ? '0' + date.getMinutes() : date.getMinutes()
-    let ss = parseInt(date.getSeconds()) < 10 ? '0' + date.getSeconds() : date.getSeconds()
+    let MM = date.getMonth() + 1 < 10 ? '0' + date.getMonth() + 1 : date.getMonth() + 1
+    let DD = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+    let hh = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+    let mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+    let ss = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
     this.setData({
       currentTime: `${YY}-${MM}-${DD} ${hh}:${mm}:${ss}`
     })

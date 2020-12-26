@@ -47,6 +47,9 @@ Page({
         wx.redirectTo({
           url: '/pages/preview/preview?name=' + this.data.name + '&stuid=' + this.data.stuid + '&gatename=' + this.data.gatename,
         })
+      },
+      fail: (err) => {
+        console.log(err);
       }
     })
   }
